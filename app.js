@@ -95,6 +95,10 @@ app.get("/listings", async (req, res) => {
   });
   res.render("listings", { allListings });
 });
+app.get("/", async (req, res) => {
+  const allListings = await Listing.find();
+  res.render("listings/index", { allListings });
+});
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found"));
