@@ -4,7 +4,7 @@ const Listing = require("../models/listing");
 const router = express.Router();
 const { isLoggedIN, isOwner, validateListing } = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
-const { storage } = require("../cloudConfig.js"); // ✅ Your Cloudinary setup
+const { storage } = require("../cloudconfig.js"); // ✅ Your Cloudinary setup
 const multer = require("multer");
 const upload = multer({ storage }); // ✅ Cloudinary storage
 
